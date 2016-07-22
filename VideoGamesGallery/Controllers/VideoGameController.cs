@@ -3,14 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VideoGamesGallery.Models;
+using VideoGamesGallery.Data;
 
 namespace VideoGamesGallery.Controllers
 {
     public class VideoGameController : Controller
     {
+        private VideoGameRepository _videoGameRepository = null;
+
+        public VideoGameController()
+        {
+            _videoGameRepository = new VideoGameRepository();
+        }
+
         public ActionResult Index()
         {
-            return View();
+            var videoGames = _videoGameRepository.GetVideoGames();
+            return View(videoGames);
         }
 
         public ActionResult About()
