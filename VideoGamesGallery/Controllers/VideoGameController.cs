@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace VideoGamesGallery.Controllers
 {
-    public class HomeController : Controller
+    public class VideoGameController : Controller
     {
         public ActionResult Index()
         {
